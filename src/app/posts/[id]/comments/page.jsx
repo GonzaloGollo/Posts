@@ -1,5 +1,3 @@
-import Link from "next/link.js";
-
 const fetchSingleComments = (id) => {
   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
     next: {
@@ -15,12 +13,14 @@ export default async function Comments({params}){
     return(
     <>
         <h2>Aca van nuestro Comment {id}</h2>
-      <ul>
+      <ul style={{background:'lightgrey'}}>
         {comment.map(comment =>(
             <li key={comment.id}>
-                <h2>{comment.name}</h2>
-                <p>{comment.body}</p>
+                <h4>{comment.name}</h4>
+                <small>{comment.body}</small>
+               
             </li>
+            
         ))}
       </ul>
       </>
