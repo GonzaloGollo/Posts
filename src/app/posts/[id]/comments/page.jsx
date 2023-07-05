@@ -1,10 +1,25 @@
-const fetchSingleComments = (id) => {
-  return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
-    next: {
-      revalidate: 5,
-    },})
-.then(res => res.json());
-};
+//  Sin demora
+//  const fetchSingleComments = (id) => {
+//   return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
+//     next: {
+//       revalidate: 5,
+//     },})
+// .then(res => res.json());
+// };
+
+import { promise } from "selenium-webdriver";
+import { resolve } from "styled-jsx/css";
+
+// Con demora
+const fetchSingleComments = async (id) => {
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    throw new Error('Error al cargar los comentarios')
+    return fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, {
+      next: {
+        revalidate: 5,
+      },})
+  .then(res => res.json());
+  };
 
 export default async function Comments({params}){
     const {id} = params;
