@@ -19,8 +19,9 @@ export async function ListOfPosts() {
         <Link href='/posts.[id]' as={`/posts/${post.id}`}>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
-      <LikeButton id={post.id} />
       </Link>
+      <LikeButton id={post.id} />
+    
     </article>
   ));
 }
