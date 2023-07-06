@@ -16,5 +16,21 @@ module.exports = {
         }
 
         return config;
-    }
+    },
+    images: {
+            domains: ['avatar.dicebear.com'],
+    },
 }
+
+module.exports = {
+    images: {
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'assets.example.com',
+          port: '',
+          pathname: '/account123/**',
+        },
+      ],
+    },
+  }

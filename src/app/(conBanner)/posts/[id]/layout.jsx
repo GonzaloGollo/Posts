@@ -1,4 +1,4 @@
-
+import Image from "next/image";
 // export default function PostsLayout({children}){
 //     return(
 //         <div>
@@ -30,10 +30,12 @@ export default async function Posts({children, params}){
         <h2>Aca van nuestro Post {id}</h2>
       
         <article key={post.id}>
-        <h2>{post.title}</h2>
+        <div><h2>{post.title}</h2>
         <p>{post.body}</p>
         <Link href={`/posts/${id}/comments`}>Ver Comentarios</Link>
         {children}
+        </div>
+
         </article>
        
         </>

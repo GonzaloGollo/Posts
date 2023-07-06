@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+
 import Link from "next/link";
 // import next from "next/types";
 import { LikeButton } from "./LikeButton";
@@ -16,10 +18,16 @@ export async function ListOfPosts() {
 
   return posts.slice(0, 5).map((post) => (
     <article key={post.id} className="post">
-        <Link href='/posts.[id]' as={`/posts/${post.id}`}>
+      <div>
+      <Link href='/posts.[id]' as={`/posts/${post.id}`}>
       <h2>{post.title}</h2>
       <p>{post.body}</p>
+      <Image width='50' height='50' alt="wefwe" src={`https://avatars.dicebear.com/api/pixel-art-neutral/${post.id}.svg`} />
+
       </Link>
+
+      </div>
+
       <LikeButton id={post.id} />
     
     </article>
